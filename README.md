@@ -1,2 +1,2 @@
 # vizh
-Visual Profile of Personality in Opioid Users 
+Visualizing the Personality Profile of Drug Users 
