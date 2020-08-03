@@ -5,7 +5,7 @@ body {
     height: 100%;
     margin-top: auto;
     margin-bottom: auto;
-    background-color: black;
+    background-color: white;
 
     display: flex;
     flex-direction: row;   
@@ -14,54 +14,31 @@ body {
     font-family: 'DM Sans', sans-serif;
 }
 
+/* LEFT PANEL */
+/* ********************************************** */
+
 .leftpanel {
     position: fixed;
     left: 0;
     height: 100%; 
-    width: 25%;
+    width: 20%;
     background-color: white;
-}
 
-/* .scaling-svg-container {
-    position: relative; 
-    height: 50%; 
-    width: 50%;
+    border: 5px solid red;
 
     display: flex;
     flex-direction: column;   
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
 }
 
-.chart {
-    position: absolute;
-    height: 100%; 
+.lvspace1 {
+    height: 8%;
+    width: 100%;
+}
+
+.buttonbox {
+    height: 92%;
     width: 100%; 
-    left: 0; 
-    top: 0;
-    background-color: white;
-}
-
-.xlabs {
-    position: absolute;
-    height: 273px;
-    width: 582.5px; 
-    top: 100px;
-    font-size: 30px;
-    font-weight: bold;
-    color: black;
-    border-top: 5px solid red;
-    border-bottom: 2px solid gray;
-
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-}
-
-.transition-buttons {
-    position: absolute;
-    height: 300px;
-    width: 160px; 
     left: 100px;
     top: 103px;
 
@@ -70,21 +47,105 @@ body {
     color: black;
 
     display: flex;
+    align-items: center;
+    justify-content: center;
     flex-direction: column;
 }
 
-.transition-buttons button {
-    height: 55px;
-    width: 160px;
-    padding: 9px;
-    border: 5px solid black;
-    background-color: white;
-    text-align: center;
+    .buttonbox button {
+        height: 50px;
+        width: 70%;
+        padding: 9px;
+        border: 5px solid black;
+        background-color: white;
+        text-align: center;
 
-    font-family: 'DM Sans', sans-serif;
-    font-weight: bold;
-    font-size: 15px;
+        font-family: 'DM Sans', sans-serif;
+        font-weight: bold;
+        font-size: 15px;
+    }
+
+        #btn6 {
+            color: red;
+        }
+
+/* CENTER PANEL */
+/* ********************************************** */
+
+.centerpanel {
+    position: fixed; 
+    height: 100%; 
+    width: 50%;
+
+    border: 5px solid red;
+
+    display: flex;
+    flex-direction: column;   
+    justify-content: center;
+    align-items: center;
 }
+
+.alignlabs {
+        height: 10%;
+        width: 100%;
+
+        border: 5px solid red;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .xlabs {
+        height: 100%;
+        width: 82%;
+
+        font-size: 30px;
+        font-weight: bold;
+        color: black;
+
+        border: 5px solid red;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+        .xlabs div {
+            height: 100%;
+            width: 14.2857142857%;
+
+            border-left: 2px solid red;
+            text-align: center;
+        }
+
+            #slab {
+                border-right: 1px solid black;
+            }
+
+.chart {
+    display: block;
+    margin: auto;
+    height: 65%; 
+    width: 100%;
+    
+    /* padding-bottom: 100%; */
+
+    /* position: absolute;
+    height: 100%; 
+    width: 100%; 
+    left: 0; 
+    top: 0; */
+
+    background-color: white;
+    border: 5px solid red;
+}
+
+
+/* RIGHT PANEL */
+/* ********************************************** */
+
+/* 
 
 .legend {
     position: absolute; 
