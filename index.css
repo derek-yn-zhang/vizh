@@ -24,20 +24,36 @@ body {
     width: 20%;
     background-color: white;
 
-    border: 5px solid red;
+    display: flex;
+    flex-direction: column;   
+    justify-content: center;
+}
+
+.groups {
+    height: 6%; 
+    width: 80%;
 
     display: flex;
     flex-direction: column;   
-    justify-content: flex-start;
+    justify-content: center;
+    align-items: flex-start;
+
+    font-family: 'DM Sans', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    color: red;
 }
 
-.lvspace1 {
-    height: 8%;
-    width: 100%;
-}
+    .groups div {
+        margin-left: 41px;
+    }
+
+    #n {
+        color: black;
+    }
 
 .buttonbox {
-    height: 92%;
+    height: 50%;
     width: 100%; 
     left: 100px;
     top: 103px;
@@ -53,6 +69,7 @@ body {
 }
 
     .buttonbox button {
+        margin-top: -5px;
         height: 50px;
         width: 70%;
         padding: 9px;
@@ -65,8 +82,13 @@ body {
         font-size: 15px;
     }
 
-        #btn6 {
+        .buttonbox button:hover, button:focus {
             color: red;
+        }
+
+        #btn6, #btn7 {
+            background-color: black;
+            color: white;
         }
 
 /* CENTER PANEL */
@@ -78,8 +100,6 @@ body {
     height: 100%; 
     width: 50%;
 
-    border: 5px solid red;
-
     display: flex;
     flex-direction: column;   
     justify-content: center;
@@ -89,12 +109,12 @@ body {
 .alignlabs {
         height: 10%;
         width: 100%;
-
-        border: 5px solid red;
+        margin-bottom: 5px;
 
         display: flex;
         flex-direction: row;
         justify-content: center;
+        border-bottom: 5px solid red;
     }
 
     .xlabs {
@@ -104,8 +124,6 @@ body {
         font-size: 30px;
         font-weight: bold;
         color: black;
-
-        border: 5px solid red;
 
         display: flex;
         flex-direction: row;
@@ -121,33 +139,77 @@ body {
         }
 
             #slab {
-                border-right: 1px solid black;
+                border-right: 2px solid red;
             }
 
 .chart {
     display: block;
     margin: auto;
-    height: 65%; 
+    height: 78%; 
     width: 100%;
-    
-    /* padding-bottom: 100%; */
-
-    /* position: absolute;
-    height: 100%; 
-    width: 100%; 
-    left: 0; 
-    top: 0; */
-
     background-color: white;
-    border: 5px solid red;
 }
+
+.midline {
+    position: absolute;
+    bottom: 0;
+    height: 50.5%;
+    width: 90%;
+    border-top: 1px solid black;
+}
+
+.annotations {
+    bottom:0;
+    height: 12%;
+    width: 100%;
+    border-top: 5px solid red;
+}
+
+
+/* SLIM PANEL */
+/* ********************************************** */
+
+.slimpanel {
+    position: fixed;
+    margin-left: 70%;
+    height: 100%;
+    width: 10%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.legend {
+    height: 30%; 
+    width: 60%;
+
+    display: flex;
+    flex-direction: column;   
+    justify-content: space-between;
+    align-items: center;
+
+    font-family: 'DM Sans', sans-serif;
+    font-weight: bold;
+    font-size: 25px;
+    color: red;
+}
+
+    #zero {
+        font-size: 15px;
+        color: black;
+    }
+
+/* RIGHT PANEL */
+/* ********************************************** */
 
 .rightpanel {
     position: fixed;
     right: 0;
     height: 100%;
-    width: 30%;
-    background-color: white;
+    width: 20%;
+    background-color: black;
 
     border: 5px solid red;
 
@@ -156,39 +218,11 @@ body {
     justify-content: flex-start;
 }
 
-/* RIGHT PANEL */
-/* ********************************************** */
 
-/* 
-
-.legend {
-    position: absolute; 
-    margin-left: 330px;
-    margin-top: -19px;
-    height: 50px; 
-    width: 20px;
-
-    display: flex;
-    flex-direction: column;   
-    justify-content: center;
-    align-items: center;
-
-    font-family: 'DM Sans', sans-serif;
-    font-weight: bold;
-    font-size: 15px;
-    color: red;
-}
-
-#zero {
-    color: black;
-}
 
 .abbr {
-    position: absolute;
-    height: 350px;
-    width: 220px; 
-    right: 60px;
-    top: 103px;
+    height: 50%;
+    width: 100%;
     font-size: 15px;
     font-weight: regular;
     color: red;
@@ -198,10 +232,3 @@ body {
     flex-direction: column;
 }
 
-.annotations {
-    position: absolute;
-    margin-top: 250px;
-    height: 100px;
-    width: 582.5px;
-    border-top: 5px solid red;
-} */

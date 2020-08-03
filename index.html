@@ -10,15 +10,18 @@
 	<body>
 
 		<div class="leftpanel">
-			<div class="lvspace1"></div>
+			<div class="groups">
+				<div id="u"><span>&#x25a0;</span><span>&nbsp;user</span></div>
+				<div id="n"><span>&#x25a0;</span><span>&nbsp;non-user</span></div>
+			</div>
 			<div class="buttonbox">
-				<button id="btn1" onclick="whichData(this)">CANNABINOIDS</button><br/>
-				<button id="btn2" onclick="whichData(this)">HALLUCINOGENS</button><br/>
-				<button id="btn3" onclick="whichData(this)">INHALENTS</button><br/>
-				<button id="btn4" onclick="whichData(this)">OPIOIDS</button><br/>
-				<button id="btn5" onclick="whichData(this)">ILLEGAL</button><br/>
-				<button id="btn6" onclick="whichData(this)">CLEAR</button><br/>
-				<!-- <button id="btn7" onClick="window.location.reload();">RESET</button> -->
+				<button id="btn1" onclick="whichData(this)">CANNABINOIDS</button>
+				<button id="btn2" onclick="whichData(this)">HALLUCINOGENS</button>
+				<button id="btn3" onclick="whichData(this)">INHALENTS</button>
+				<button id="btn4" onclick="whichData(this)">OPIOIDS</button>
+				<button id="btn5" onclick="whichData(this)">ILLEGAL</button>
+				<button id="btn6" onclick="whichData(this)">CLEAR</button>
+				<button id="btn7" onClick="window.location.reload();">RESET</button>
 			</div>
 		</div>
 
@@ -36,19 +39,22 @@
 			</div>
 
 			<svg class="chart" 
-				viewBox="7.36 -50 100 100" 
+				viewBox="12.5 -55 100 110" 
 				preserveAspectRatio="xMidYMid meet">
 				<!-- SVG content -->
 			</svg>
 
-			<div legend class="legend">
-				<!-- legend content -->
+			<div class="midline"></div>
+
+			<div class="annotations"></div>
+		</div>
+
+		<div class="slimpanel">
+			<div class="legend">
 				<div>+</div>
 				<div id="zero">0</div>
 				<div>-</div>
 			</div>
-
-			<div class="annotations"></div>
 		</div>
 
 		<div class="rightpanel">
@@ -63,17 +69,7 @@
 			</div>
 		</div>
 
-		</div>
-
 		<script>
-
-			// var xlab = [ "N","E","O","A","C","I","S" ];
-			// 	d3.select(".xlabs")
-			// 		.selectAll(null).data(xlab).enter().append("div")
-			// 		.text(function(d) { return d; })
-			// 		.style("width", 100)
-			// 		.style("height", 50)
-			// 		.style("text-align", "center");
 
 			// var lastClicked = null;
 
@@ -182,9 +178,9 @@
 
 
 				var data = getData(buttonClickedId);
-				var barwidth = 15.3;
-				var barspace = 16.23;
-				var groupadjust = 113.57;
+				var barwidth = 14.7;
+				var barspace = 15.2;
+				var groupadjust = 106.4;
 
 				d3.select(".chart")
 					.selectAll("rect").data(data).enter()
@@ -201,7 +197,7 @@
 						.attr("y", function(d) { 
 								if(d[0] < 0) { return 0 }
 							})
-						// .attr("transform", "translate(7.5,0)")
+						.attr("transform", "translate(9.5,0)")
 						.style("fill-opacity", 1)
 							.style("fill", function(d) { 
 								if(d[1] == 1) {
@@ -245,7 +241,7 @@
 								}
 							}
 						)
-						// .attr("transform", "translate(7.5,0)")
+						.attr("transform", "translate(9.5,0)")
 						.attr("x1", function(d,i) {
 							if(d[1] == 1) {
 								return barspace*i;
