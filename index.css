@@ -16,8 +16,8 @@ body {
 
 .scaling-svg-container {
     position: relative; 
-    height: 50%; 
-    width: 50%;
+    height: 70%; 
+    width: 0%;
 
     display: flex;
     flex-direction: column;   
