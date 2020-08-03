@@ -169,7 +169,7 @@
 							}
 						})
 						.attr("y", function(d) { 
-								if(d[0] < 0) { return 0 }
+								if(d[0] < 0) { return 900 }
 							})
 						.attr("transform", "translate(100,0)")
 						.style("fill-opacity", 1)
@@ -187,12 +187,12 @@
 						if (d[0] >= 0) {
 							d3.select(this)
 							.attr("height", 0)
-							.attr("y", 0)
+							.attr("y", 900)
 							.transition()
 								.delay(50)
 								.duration(1000)
 								.attr("height", function(d) { return 350*d[0]; })
-								.attr("y", function(d) { return 0 - 350*d[0]; })
+								.attr("y", function(d) { return 900 - 350*d[0]; })
 						}
 						else if (d[0] < 0) {
 							d3.select(this)
@@ -230,8 +230,8 @@
 								return 76*i - 532 + 74;
 							}
 						})
-						.attr("y1", function(d,i) { return 0 - 350*d[0] })
-						.attr("y2", function(d,i) { return 0 - 350*d[0] });
+						.attr("y1", function(d,i) { return 900 - 350*d[0] })
+						.attr("y2", function(d,i) { return 900 - 350*d[0] });
 			}
 		</script>
 	</body>
