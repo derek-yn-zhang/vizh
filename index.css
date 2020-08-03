@@ -32,12 +32,6 @@ body {
     left: 0; 
     top: 0;
     background-color: white;
-    display: inline-block;
-    margin: auto;
-}
-
-.chart rect {
-    fill:red;
 }
 
 .xlabs {
@@ -56,12 +50,21 @@ body {
     justify-content: space-evenly;
 }
 
+.leftpanel {
+    position: fixed;
+    left: 0;
+    height: 100%; 
+    width: 25.53%;
+    background-color: white;
+}
+
 .transition-buttons {
     position: absolute;
     height: 300px;
     width: 160px; 
     left: 100px;
     top: 103px;
+
     font-size: 30px;
     font-weight: bold;
     color: black;
