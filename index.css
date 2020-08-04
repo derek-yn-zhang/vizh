@@ -8,37 +8,45 @@ body {
     background-color: white;
     display: flex;
     flex-direction: row;   
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
     font-family: 'DM Sans', sans-serif;
 }
+
+.leftpanel, .centerpanel, .slimpanel { overflow: hidden; position: fixed; }
+.rightpanel { overflow: auto; }
 
 
 /* LEFT PANEL */
 /* ********************************************** */
 
 .leftpanel {
-    position: fixed;
     left: 0;
     height: 100%; 
-    width: 20%;
+    width: 16%;
     background-color: white;
     display: flex;
     flex-direction: column;   
     justify-content: center;
 }
 
+.groups, .buttonbox {
+    padding-right: 5%;
+}
+
 .groups {
     height: 30px; 
     width: 100%;
+    padding-bottom: 16%;
     display: flex;
     font-weight: bold;
     font-size: 15px;
     color: red;   
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
     flex-direction: column;
 }
+
     .groups .groupbox {
         height: 100%;
         width: 70%;
@@ -49,7 +57,8 @@ body {
         flex-direction: row;
     }
         .legendcolor {
-            margin-right: 10%;
+            padding-right: 3%;
+            margin-right: 4%;
             height: 100%;
             width: 12%;
             text-align: center;
@@ -61,9 +70,8 @@ body {
             }
         .legendlab {
             /* position: fixed; */
-            margin-right: 13%;
+            margin-right: 25%;
             height: 100%;
-            width: 78%;
             text-align: right;
             color: red;
         }
@@ -72,38 +80,45 @@ body {
             }
 
 .buttonbox {
+    z-index: 1000;
     height: 50%;
     width: 100%;
     font-weight: bold;
     color: black;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-end;
+    justify-content: flex-start;
     flex-direction: column;
+    border-right: 1px solid rgb(110, 110, 110);;
 }
     .buttonbox button {
-        margin-top: -5px;
+        margin-top: -2px;
         height: 50px;
-        width: 70%;
-        padding: 5%;
+        width: 100%;
+        padding-top: 7%;
+        padding-bottom: 10%;
         border-top: 1px solid rgb(110, 110, 110);
-        border-right: 1px solid rgb(110, 110, 110);
+        border-right: 1px solid white;
         border-left: none;
+
         background-color: white;
         text-align: center;
         font-family: 'DM Sans', sans-serif;
         font-weight: normal;
         font-size: 15px;
+        
         display: flex;
-        align-items: center;
-        justify-content: flex-end;
         flex-direction: row;
+        justify-content: flex-end;
+        align-items: flex-end;
     }
         .binits {
+            padding-right: 8%;
             height: 100%;
-            width: 22%;
-            text-align: center;
+            width: 20%;
+            text-align: right;
             font-weight: bold;
+            color: black;
         }
         .blabels {
             margin-right: 10%;
@@ -121,16 +136,25 @@ body {
             }
             #btn7 {
                 color: red;
+                border-bottom: 1px solid rgb(110, 110, 110);
             }
 
+/* #bordercomplete {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 68.45%;
+    width: 84.8%;
+    border-right: 1px solid rgb(110, 110, 110);;
+} */
 
 
 /* CENTER PANEL */
 /* ********************************************** */
 
-.centerpanel { 
-    position: fixed;
+.centerpanel {
     margin-left: 20%;
+    /* padding-left: 5%; */
     height: 100%; 
     width: 50%;
     display: flex;
@@ -146,7 +170,7 @@ body {
         display: flex;
         flex-direction: row;
         justify-content: center;
-        border-bottom: 5px solid red;
+        border-bottom: 2px solid red;
     }
     .xlabs {
         height: 100%;
@@ -166,6 +190,8 @@ body {
         }
             #slab {
                 border-right: 2px solid red;
+                -webkit-background-clip: padding-box; /* for Safari */
+                background-clip: padding-box; /* for IE9+, Firefox 4+, Opera, Chrome */
             }
 
 .chart {
@@ -183,7 +209,7 @@ body {
     bottom:0;
     height: 12%;
     width: 100%;
-    border-top: 5px solid red;
+    border-top: 2px solid red;
 }
 
 
@@ -191,10 +217,10 @@ body {
 /* ********************************************** */
 
 .slimpanel {
-    position: fixed;
+    padding-right: 20%;
     margin-left: 70%;
     height: 100%;
-    width: 7%;
+    width: 5%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -204,7 +230,7 @@ body {
 .legend {
     height: 30%; 
     width: 60%;
-    margin-bottom: 6%;
+    margin-bottom: 10%;
     display: flex;
     flex-direction: column;   
     justify-content: space-between;
@@ -223,54 +249,78 @@ body {
 /* ********************************************** */
 
 .rightpanel {
-    position: fixed;
-    right: 0;
+    margin-left: 75%;
     height: 100%;
-    width: 23%;
+    width: 30%;
     background-color: white;
-    border: 5px solid red;
+}
+
+.content {
+    width: 100%;
+    padding-top: 63%;
+    /* border-left: 1px solid rgb(110, 110, 110); */
+
     display: flex;
-    flex-direction: column;   
-    justify-content: flex-start;
-    align-items: center;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
 }
 
 .collapsible-menu {
-    width: 85%;
-    border-bottom: 5px solid red;
+    width: 100%;
 }
+
 .collapsible-menu label {
-    padding-top: 14.8%;
-    padding-bottom: 4.7%;
-    font-size: 20px;
+    border-top: 1px solid rgb(110, 110, 110);
+    border-bottom: 1px solid rgb(110, 110, 110);
+    border-left: 1px solid white;
+
+    margin-top: -1px;
+    padding-top: 4.4%;
+    padding-bottom: 3.2%;
+    padding-left: 6%;
+    font-weight: normal;
+    font-size: 15px;
+    position: relative;
     display: block;
-    text-align: center;
     cursor: pointer;
 }
+
+.collapsible-menu label:hover {
+    background-color: #f2f2f2;
+}
+
 .menu-content {
-    position: fixed;
+    padding-left: 6%;
+    padding-right: 6%;
+    font-size: 15px;
+    font-weight: normal;
     font-family: 'DM Sans', sans-serif;
     color: black;
     overflow-wrap: break-word;
-}
-input#menu {
-    display: none;
-}
-.menu-content {
+    hyphens: auto;
     max-height: 0;
     overflow: hidden;
 }
+
 /* Toggle Effect */
 input:checked ~ .menu-content {
     max-height: 100%;
+    transition: max-height 0.3s ease-in;
+    -moz-transition: max-height 0.3s ease-in;
+    -webkit-transition: max-height 0.3s ease-in;
 }
 
-/* .collapsible-menu ul {
-    list-style-type: none;
-    padding: 0;
+input:checked ~ label {
+    color: red;
 }
-.collapsible-menu a {
-    display:block;
-    text-decoration: none;
-} */
+
+input.menu {
+    display: none;
+}
+
+.big {
+    font-weight: bold;
+    padding-right: 11%;
+}
 
