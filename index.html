@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 
-<html>
+<html></html>
 
 	<head>
+		<title>OCEANIS</title>
 		<link rel="stylesheet" href="index.css">
 		<script src="lib/d3/dist/d3.min.js"></script>
 	</head>
@@ -20,7 +21,7 @@
 				<button id="btn3" onclick="whichData(this)">INHALENTS</button>
 				<button id="btn4" onclick="whichData(this)">OPIOIDS</button>
 				<button id="btn5" onclick="whichData(this)">ILLEGAL</button>
-				<button id="btn6" onclick="whichData(this)">CLEAR</button>
+				<button id="btn6" onclick="d3.selectAll('svg > rect').remove();">CLEAR</button>
 				<button id="btn7" onClick="window.location.reload();">RESET</button>
 			</div>
 		</div>
@@ -28,19 +29,22 @@
 		<div class="centerpanel">
 			<div class="alignlabs">
 				<div class="xlabs">
-					<div id="nlab"><p>N</p></div>
-					<div id="elab"><p>E</p></div>
-					<div id="olab"><p>0</p></div>
-					<div id="alab"><p>A</p></div>
+					<div id="olab"><p>O</p></div>
 					<div id="clab"><p>C</p></div>
+					<div id="elab"><p>E</p></div>
+					<div id="alab"><p>A</p></div>
+					<div id="nlab"><p>N</p></div>
 					<div id="ilab"><p>I</p></div>
 					<div id="slab"><p>S</p></div>
 				</div>
 			</div>
 
+			<div id="tooltip" display="none" style="position: absolute; display: none;"></div>
+
 			<svg class="chart" 
-				viewBox="12.5 -55 100 110" 
+				viewBox="10.5 -55 100 110" 
 				preserveAspectRatio="xMidYMid meet">
+				<line x1="0" y1="0" x2="122" y2="0" stroke="blue" stroke-width="0.3"/>
 				<!-- SVG content -->
 			</svg>
 
@@ -75,32 +79,43 @@
 
 			function whichData(buttonElement) {
 
-				console.log("in whichData()");
-
 				function getData(buttonElement) {
 					if ( buttonClickedId === 'btn1' ) {
-						return [ [0.1023,1],[-0.0211,1],[0.3641,1],[-0.1214,1],[-0.2630,1],[0.2708,1],[0.4005,1],
-									[-0.1022,0],[0.0208,0],[-0.3651,0],[0.1209,0],[0.2623,0],[-0.2900,0],[-0.4585,0] ];
+						return [ [0.3641,1,"C"],[-0.2630,1,"C"],[-0.0211,1,"C"],
+						[-0.1214,1,"C"],[0.1023,1,"C"],[0.2708,1,"C"],[0.4005,1,"C"],
+									[-0.3651,0,"C"],[0.2623,0,"C"],[0.0208,0,"C"],
+						[0.1209,0,"C"],[-0.1022,0,"C"],[-0.2900,0,"C"],[-0.4585,0,"C"] ];
 					}
 					else if ( buttonClickedId === 'btn2' ) {
-						return [ [0.0726,1],[0.0629,1],[0.4393,1],[-0.1368,1],[-0.2980,1],[0.3575,1],[0.5242,1],
-									[-0.0725,0],[-0.0634,0],[-0.4408,0],[0.1362,0],[0.2969,0],[-0.2025,0],[-0.3192,0] ];
+						return [ [0.4393,1,"H"],[-0.2980,1,"H"],[0.0629,1,"H"],
+						[-0.1368,1,"H"],[0.0726,1,"H"],[0.3575,1,"H"],[0.5242,1,"H"],
+									[-0.4408,0,"H"],[0.2969,0,"H"],[-0.0634,0,"H"],
+						[0.1362,0,"H"],[-0.0725,0,"H"],[-0.2025,0,"H"],[-0.3192,0,"H"] ];
 					}
 					else if ( buttonClickedId === 'btn3' ) {
-						return [ [0.1113,1],[-0.0172,1],[0.1916,1],[-0.0951,1],[-0.2033,1],[0.1993,1],[0.2679,1],
-									[-0.1112,0],[0.0169,0],[-0.1925,0],[0.0946,0],[0.2026,0],[-0.2396,0],[-0.3517,0] ];
+						return [ [0.1916,1,"IN"],[-0.2033,1,"IN"],[-0.0172,1,"IN"],
+						[-0.0951,1,"IN"],[0.1113,1,"IN"],[0.1993,1,"IN"],[0.2679,1,"IN"],
+									[-0.1925,0,"IN"],[0.2026,0,"IN"],[0.0169,0,"IN"],
+						[0.0946,0,"IN"],[-0.1112,0,"IN"],[-0.2396,0,"IN"],[-0.3517,0,"IN"] ];
 					}
 					else if ( buttonClickedId === 'btn4' ) {
-						return [ [0.3666,1],[-0.2283,1],[0.3694,1],[-0.3388,1],[-0.3853,1],[0.3731,1],[0.4518,1],
-									[-0.3663,0],[0.2274,0],[-0.3723,0],[0.3375,0],[0.3832,0],[-0.0768,0],[-0.1078,0] ];
+						return [ [0.3694,1,"O"],[-0.3853,1,"O"],[-0.2283,1,"O"],
+						[-0.3388,1,"O"],[0.3666,1,"O"],[0.3731,1,"O"],[0.4518,1,"O"],
+									[-0.3723,0,"O"],[0.3832,0,"O"],[0.2274,0,"O"],
+						[0.3375,0,"O"],[-0.3663,0,"O"],[-0.0768,0,"O"],[-0.1078,0,"O"] ];
 					}
 					else if ( buttonClickedId === 'btn5' ) {
-						return [ [0.1527,1],[-0.0395,1],[0.3196,1],[-0.1684,1],[-0.2698,1],[0.2812,1],[0.3777,1],
-									[-0.1526,0],[0.0392,0],[-0.3206,0],[0.1679,0],[0.2691,0],[-0.3031,0],[-0.4347,0] ];
-					} else if ( buttonClickedId === 'btn6' ) {
-						return [ null ];
+						return [ [0.3196,1,"IL"],[-0.2698,1,"IL"],[-0.0395,1,"IL"],
+						[-0.1684,1,"IL"],[0.1527,1,"IL"],[0.2812,1,"IL"],[0.3777,1,"IL"],
+									[-0.3206,0,"IL"],[0.2691,0,"IL"],[0.0392,0,"IL"],
+						[0.1679,0,"IL"],[-0.1526,0,"IL"],[-0.3031,0,"IL"],[-0.4347,0,"IL"] ];
 					}
 				}
+
+				// NEOACIS
+				// ONEACIS
+				// OCNEAIS
+				// OCEANIS
 
 				// function checkEmpty() {
 				// 	if (d3.select(".chart").selectAll("rect").empty()) {
@@ -161,6 +176,7 @@
 				// 	})
 				// }
 
+
 				d3.selectAll("svg > rect").remove();
 				d3.selectAll("button").style("border", "5px solid black");
 
@@ -168,23 +184,15 @@
 				d3.select("#" + buttonClickedId).style("border", "5px solid red");
 				// lastClicked = buttonClickedId;
 
-				if (buttonClickedId === 'btn4') {
-					console.log('4 clicked');
-				}
-
-				if (buttonClickedId === 'btn5') {
-					console.log('5 clicked');
-				}
-
-
 				var data = getData(buttonClickedId);
-				var barwidth = 14.7;
+				var barwidth = 12.2;
 				var barspace = 15.2;
 				var groupadjust = 106.4;
 
 				d3.select(".chart")
-					.selectAll("rect").data(data).enter()
+					.selectAll(null).data(data).enter()
 					.insert("rect")
+						.attr("class", "scalebar")
 						.attr("width", barwidth)
 						.attr("x", function(d,i) {
 							if(d[1] == 1) {
@@ -233,6 +241,10 @@
 				d3.select(".chart")
 					.selectAll(null).data(data).enter()
 					.insert("line")
+						.attr("id", function(d,i) {
+							var initid = "id" + d[0].toString() + d[1].toString() + d[2];
+							return initid.replace(/[,.-]/g, '');
+						})
 						.style("stroke", function(d) { 
 								if(d[1] == 1) {
 									return "red";
@@ -259,7 +271,96 @@
 							}
 						})
 						.attr("y1", function(d,i) { return -100*d[0] })
-						.attr("y2", function(d,i) { return -100*d[0] });
+						.attr("y2", function(d,i) { return -100*d[0] })
+						.on('mouseover', function(d, i) {
+							d3.select("#s" + this.id).style("opacity", 1);
+							console.log("id", this.id);
+							console.log("mouseover", d);
+						})
+						.on('mouseout', function(d, i) {
+							d3.select("#s" + this.id).style("opacity", 0);
+							console.log("id", this.id);
+							console.log("mouseout", d);
+						});
+
+				// create a tooltip
+				// var tooltip = d3.select(".chart")
+				// 	.selectAll(null).data(data).enter()
+				// 	.insert("line")
+				// 	.append("div")
+				// 		.style("position", "absolute")
+				// 		.style("visibility", "hidden")
+				// 		.text("I'm a circle!");
+
+				// var shifts = [7.8, -3.2];
+				// var xshift = shifts[Math.floor(Math.random() * shifts.length)];
+				var xshift = -3.2;
+				var group = 
+					d3.select(".chart")
+					.selectAll(null)
+					.data(data)
+					.enter()
+					.append("g")
+						.attr("transform", "translate(" + xshift + "," + 0 + ")")
+
+
+				// var xshift = shifts[Math.floor(Math.random() * shifts.length)];
+				group.append("ellipse")
+					.attr("id", function(d,i) {
+						var initid = "cid" + d[0].toString() + d[1].toString() + d[2];
+						return initid.replace(/[,.-]/g, '');
+					})
+					.attr("cx", function(d,i) {
+						if(d[1] == 1) {
+							return barspace*i + barwidth + 3;
+						} 
+						else {
+							return barspace*i - groupadjust + barwidth + 3;
+						}
+					})
+					.attr("cy", function(d,i) { return -100*d[0] - 0.2 })
+					.attr("ry", 1.4).attr("rx", 10)
+					.attr("fill", "white")
+					.attr("stroke", "black")
+					.attr("stroke-width", 0.2)
+					.style("opacity", 0)
+					.on('mouseover', function(d, i) {
+
+							d3.select("#s" + this.id.substr(1)).style("opacity", 1);
+							console.log("id", this.id);
+							console.log("mouseover", d);
+						})
+						.on('mouseout', function(d, i) {
+							d3.select("#s" + this.id.substr(1)).style("opacity", 0);
+							console.log("id", this.id);
+							console.log("mouseout", d);
+						});
+
+					// var arr = [9, -5.2];
+					// arr[Math.floor(Math.random() * arr.length)];
+
+				group.append("text")
+					.attr("id", function(d,i) {
+						var initid = "sid" + d[0].toString() + d[1].toString() + d[2];
+						return initid.replace(/[,.-]/g, '');
+					})
+					.text(function(d) { return d[2]; })
+					.attr("x", function(d,i) {
+					if(d[1] == 1) {
+						return barspace*i + barwidth - 0.05 - 1.02;
+					} 
+					else {
+						return barspace*i - groupadjust + barwidth - 0.05 - 1.02;
+					}
+					})
+					.attr("y", function(d,i) { return -100*d[0] + 0.65 })
+					.attr("text-anchor", "middle")
+					.attr("stroke", "black")
+					.attr("stroke-width", "0.2px")
+					.style("opacity", 0)
+					.style("font-family", "'DM' Sans, sans-serif")
+					.style("font-weight", "normal")
+					.style("font-size", 2);
 			}
 		</script>
 	</body>

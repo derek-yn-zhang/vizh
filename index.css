@@ -14,6 +14,7 @@ body {
     font-family: 'DM Sans', sans-serif;
 }
 
+
 /* LEFT PANEL */
 /* ********************************************** */
 
@@ -80,6 +81,8 @@ body {
         font-family: 'DM Sans', sans-serif;
         font-weight: bold;
         font-size: 15px;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
     }
 
         .buttonbox button:hover, button:focus {
@@ -89,6 +92,11 @@ body {
         #btn6, #btn7 {
             background-color: black;
             color: white;
+        }
+
+        #btn7 {
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
         }
 
 /* CENTER PANEL */
@@ -150,13 +158,9 @@ body {
     background-color: white;
 }
 
-.midline {
-    position: absolute;
-    bottom: 0;
-    height: 50.5%;
-    width: 90%;
-    border-top: 1px solid black;
-}
+    .centerpanel  svg:hover g {
+        fill: red;
+    }
 
 .annotations {
     bottom:0;
@@ -177,13 +181,14 @@ body {
 
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: flex-start;
 }
 
 .legend {
     height: 30%; 
     width: 60%;
+    margin-bottom: 6%;
 
     display: flex;
     flex-direction: column;   
