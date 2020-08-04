@@ -90,9 +90,10 @@
 		</div>
 
 		<div class="rightpanel">
+			<div class="annotationbox"></div>
 			<div class="content">
 				<div class="collapsible-menu">
-					<input type="checkbox" class="menu" id="o-menu">
+					<input type="checkbox" class="menu" id="o-menu" onclick="console.log(this.id.toString())">
 					<label for="o-menu"><span class="big">O</span>Openness to experience</label>
 					<div class="menu-content">
 						<p>: a tendency towards intellectual curiosity, aesthetic sensitivity, liberal values, and emotional differentiation.</p>
@@ -143,19 +144,24 @@
 			</div>
 		</div>
 
-		<!-- <ul>
-						<li><a href="#"></a><span class="big">O</span><span>penness to Experience</span></li>
-						<li><a href="#"></a><span class="big">C</span><span>onscientousness</span></li>
-						<li><a href="#"></a><span class="big">E</span><span>xtraversion</span></li>
-						<li><a href="#"></a><span class="big">A</span><span>greableness</span></li>
-						<li><a href="#"></a><span class="big">N</span><span>euroticism</span></li>
-						<li><a href="#"></a><span class="big">I</span><span>mpulsiveness</span></li>
-						<li><a href="#"></a><span class="big">S</span><span>ensation Seeking</span></li>
-					</ul> -->
-
 		<script>
 
 			// var lastClicked = null;
+
+			var menuarr = ["o-menu","c-menu","e-menu","a-menu","n-menu","i-menu","s-menu"];
+			function addEventListener(id) {
+				document.getElementById(id).addEventListener("input", function (e) {
+					if (document.getElementById(this.id).checked) {
+						d3.selectAll('.menu').property('checked', false);
+						d3.select("#" + this.id).property('checked', true);
+					}
+				});
+			}
+
+			var i;
+			for (i = 0; i < menuarr.length; i++) {
+				addEventListener(menuarr[i]);
+			}
 
 			function finalpage() {
 				d3.selectAll('svg > rect').remove();

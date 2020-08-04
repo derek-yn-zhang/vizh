@@ -253,11 +253,22 @@ body {
     height: 100%;
     width: 30%;
     background-color: white;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.annotationbox {
+    position: fixed;
+    margin-top: 5.5%;
+    height: 18%;
+    width: 100%;
+    border: 1px solid red;
 }
 
 .content {
     width: 100%;
-    /* padding-top: 63%; */
+    padding-top: 63%;
     /* border-left: 1px solid rgb(110, 110, 110); */
 
     display: flex;
