@@ -187,7 +187,11 @@ function whichData(buttonElement) {
                 .attr("y", 0)
                 .transition()
                     .duration(600)
-                    .style("fill", function(d) { return "rgb("+ Math.abs(Math.round(d[0] * 800)) + ",204," + Math.abs(Math.round(d[0] * 900)) + ")"; })
+                    // .style("fill", function(d) { return "rgb("+ Math.abs(Math.round(d[0] * 800)) + ",204," + Math.abs(Math.round(d[0] * 900)) + ")"; })
+                    .style("fill", function(d) { 
+                        dval = 255 - (Math.abs(d[0]) * 255);
+                        return "rgb("+ dval + "," + dval + "," + dval + ")"; 
+                    })
                 .transition()
                     .duration(800)
                     .attr("height", function(d) { return 100*d[0]; })
@@ -197,7 +201,11 @@ function whichData(buttonElement) {
                 d3.select(this)
                 .transition()
                     .duration(600)
-                    .style("fill", function(d) { return "rgb("+ Math.abs(Math.round(d[0] * 800)) + ",204," + Math.abs(Math.round(d[0] * 900)) + ")"; })
+                    // .style("fill", function(d) { return "rgb("+ Math.abs(Math.round(d[0] * 800)) + ",204," + Math.abs(Math.round(d[0] * 900)) + ")"; })
+                    .style("fill", function(d) { 
+                        dval = 255 - (Math.abs(d[0]) * 255);
+                        return "rgb("+ dval + "," + dval + "," + dval + ")"; 
+                    })
                 .transition()
                     .duration(800)
                     .attr("height", function(d) { return -100*d[0]; })
