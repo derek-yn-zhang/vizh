@@ -6,7 +6,8 @@ function addEventListener(id) {
         if (document.getElementById(this.id).checked) {
             d3.selectAll('.menu').property('checked', false);
             d3.select("#" + this.id).property('checked', true);
-            d3.select("#traits").style('opacity', 0);
+            d3.select("#traits")
+            .transition().duration(45).style("top", "88%").transition().duration(900).style('opacity', 0);
         }
     });
 }
@@ -107,9 +108,6 @@ function whichData(buttonElement) {
             [0.1679,0,"IL"],[-0.1526,0,"IL"],[-0.3031,0,"IL"],[-0.4347,0,"IL"] ];
         }
     }
-
-    console.log(lastClicked != null)
-    console.log(lastClicked)
 
     if (lastClicked != null) {
         console.log("in clearance step");
