@@ -13,8 +13,7 @@ body {
     font-family: 'DM Sans', sans-serif;
 }
 
-.leftpanel, .centerpanel, .slimpanel { overflow: hidden; position: fixed; }
-.rightpanel { overflow: auto; }
+.leftpanel, .centerpanel, .slimpanel { position: fixed; }
 
 
 /* LEFT PANEL */
@@ -269,7 +268,8 @@ body {
 
 .content {
     width: 100%;
-    padding-top: 53%;
+    /* padding-top: 63%; */
+    padding-top: 48%;
     /* border-left: 1px solid rgb(110, 110, 110); */
 
     display: flex;
@@ -309,18 +309,18 @@ body {
     font-weight: normal;
     font-family: 'DM Sans', sans-serif;
     color: black;
-    overflow-wrap: break-word;
-    hyphens: auto;
     max-height: 0;
     overflow: hidden;
+    overflow-wrap: break-word;
+    hyphens: auto;
 }
 
 /* Toggle Effect */
 input:checked ~ .menu-content {
     max-height: 100%;
-    transition: max-height 0.3s ease-in;
-    -moz-transition: max-height 0.3s ease-in;
-    -webkit-transition: max-height 0.3s ease-in;
+    transition: max-height 0.5s ease-in;
+    -moz-transition: max-height 0.5s ease-in;
+    -webkit-transition: max-height 0.5s ease-in;
 }
 
 input:checked ~ label {
