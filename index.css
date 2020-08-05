@@ -263,7 +263,7 @@ body {
     height: 11%;
     width: 100%;
     border: 1px solid red;
-    top: 14.45%;
+    top: 16%;
 
     /* padding-left: 6%;
     padding-right: 12%; */
@@ -277,8 +277,9 @@ body {
 }
 
 .content {
+    position: relative;
     width: 100%;
-    top: 25.45%;
+    top: 18%;
     /* padding-top: 53%; */
     /* border-left: 1px solid rgb(110, 110, 110); */
 
