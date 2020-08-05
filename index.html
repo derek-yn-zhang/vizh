@@ -5,7 +5,7 @@
 	<head>
 		<title>OCEANIS</title>
 		<link rel="stylesheet" href="index.css" />
-		<link rel="icon" type="image/png" href="docomo_smile.png" />
+		<link rel="shortcut icon" href="docomo_smile.ico" />
 		<script src="lib/d3/dist/d3.min.js"></script>
 	</head>
 
@@ -58,9 +58,17 @@
 		<div class="slimpanel">
 			<div class="alignlegend">
 				<div class="legend">
+					<div id="topspace" class="slimspace"></div>
+					<div class="percentile">70<sup>th</sup></div>
+					<div class="between" class="slimspace"></div>
 					<div>+</div>
-					<div id="zero">0</div>
+					<div class="inner" class="slimspace"></div>
+					<div class="percentile">50<sup>th</sup></div>
+					<div class="inner" class="slimspace"></div>
 					<div>-</div>
+					<div class="between" class="slimspace"></div>
+					<div class="percentile">30<sup>th</sup></div>
+					<div id="bottomspace" class="slimspace"></div>
 				</div>
 			</div>
 		</div>
@@ -81,9 +89,13 @@
 			<div id="tooltip" display="none" style="position: absolute; display: none;"></div>
 
 			<svg class="chart" 
-				viewBox="10.5 -55 100 110" 
+				viewBox="9.5 -55 100 110" 
 				preserveAspectRatio="xMidYMid meet">
-				<line x1="0" y1="0" x2="122" y2="0" stroke="black" stroke-width="0.1"/>
+				<line x1="0" y1="0" x2="119" y2="0" stroke="black" stroke-width="0.1"/>
+				<line x1="0" y1="50" x2="119" y2="50" stroke="black" stroke-width="0.1"
+					  stroke-linecap="round" stroke-dasharray="0.5, 1"/>
+				<line x1="0" y1="-50" x2="119" y2="-50" stroke="black" stroke-width="0.1"
+					  stroke-linecap="round" stroke-dasharray="0.5, 1"/>
 				<!-- SVG content -->
 			</svg>
 

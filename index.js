@@ -104,9 +104,9 @@ function whichData(buttonElement) {
     lastClicked = buttonClickedId;
 
     var data = getData(buttonClickedId);
-    var barwidth = 12.2;
-    var barspace = 14.96;
-    var groupadjust = 104.72;
+    var barwidth = 11;
+    var barspace = 14.89;
+    var groupadjust = 104.23;
 
     d3.select(".chart")
         .selectAll(null).data(data).enter()
@@ -129,9 +129,7 @@ function whichData(buttonElement) {
                     if(d[0] < 0) { return 0 }
                 })
             .attr("transform", "translate(9.5,0)")
-            .style("fill-opacity", 1)
-            .style("fill", function(d) { return "rgb("+ Math.abs(Math.round(d[0] * 800)) 
-            + ",204," + Math.abs(Math.round(d[0] * 900)) + ")"; })
+            .style("fill-opacity", 0.8)
             .on('mouseover', function(d, i) {
                 d3.select("#s" + this.id.substr(1)).style("opacity", 1);
                 console.log("id", this.id);
@@ -154,21 +152,26 @@ function whichData(buttonElement) {
                 .attr("height", 0)
                 .attr("y", 0)
                 .transition()
-                    .delay(50)
-                    .duration(1000)
+                    .duration(600)
+                    .style("fill", function(d) { return "rgb("+ Math.abs(Math.round(d[0] * 800)) + ",204," + Math.abs(Math.round(d[0] * 900)) + ")"; })
+                .transition()
+                    .duration(800)
                     .attr("height", function(d) { return 100*d[0]; })
                     .attr("y", function(d) { return -100*d[0]; })
             }
             else if (d[0] < 0) {
                 d3.select(this)
                 .transition()
-                    .delay(50)
-                    .duration(1000)
+                    .duration(600)
+                    .style("fill", function(d) { return "rgb("+ Math.abs(Math.round(d[0] * 800)) + ",204," + Math.abs(Math.round(d[0] * 900)) + ")"; })
+                .transition()
+                    .duration(800)
                     .attr("height", function(d) { return -100*d[0]; })
             }
 
         })
 
+    var hideline = 0.11;
     d3.select(".chart")
         .selectAll(null).data(data).enter()
         .insert("line")
@@ -179,20 +182,21 @@ function whichData(buttonElement) {
             .attr("transform", "translate(9.5,0)")
             .attr("x1", function(d,i) {
                 if(d[1] == 1) {
-                    return barspace*i;
+                    return barspace*i - hideline;
                 } 
                 else {
-                    return barspace*i - groupadjust;
+                    return barspace*i - groupadjust - hideline;
                 }
             })
             .attr("x2", function(d,i) {
                 if(d[1] == 1) {
-                    return barspace*i + barwidth;
+                    return barspace*i + barwidth + hideline;
                 } 
                 else {
-                    return barspace*i - groupadjust + barwidth;
+                    return barspace*i - groupadjust + barwidth + hideline;
                 }
             })
+            .attr("stroke-linecap", "round")
             .transition()
                 .delay(50)
                 .duration(1000)
@@ -261,16 +265,16 @@ function whichData(buttonElement) {
         .attr("x", function(d,i) {
             // shiftBool = shifts[Math.floor(Math.random() * shifts.length)];
             if(d[1] == 1) {
-                var toReturn = barspace*i + barwidth - 0.9;
+                var toReturn = barspace*i + barwidth - 0.6;
                 if(d[2] == "IN" || d[2] == "IL" || d[2] == "O") {
-                    toReturn = toReturn + 14.8;
+                    toReturn = toReturn + 15.15;
                 }
                 return toReturn;
             } 
             else {
-                var toReturn = barspace*i - groupadjust + barwidth - 0.9;
+                var toReturn = barspace*i - groupadjust + barwidth - 0.6;
                 if(d[2] == "IN" || d[2] == "IL" || d[2] == "O") {
-                    toReturn = toReturn + 14.8;
+                    toReturn = toReturn + 15.15;
                 }
                 return toReturn;
             }
