@@ -48,6 +48,8 @@ function finalpage() {
 
 function whichData(buttonElement) {
 
+    d3.select(".hoverinstruct").transition().delay(300).duration(800).style("opacity", 0);
+
     function getAnnotations(buttonClickedId) {
         if ( buttonClickedId === 'btn1' ) {
             return "This is button 1 here!";
