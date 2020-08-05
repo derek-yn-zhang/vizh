@@ -1,9 +1,4 @@
-// var lastClicked = null;
-
-window.onclick = function () {
-    d3.select("#drugclasses").style("opacity", 0);
-    d3.select("#traits").style("opacity", 0);
-}
+var lastClicked = null;
 
 var menuarr = ["o-menu","c-menu","e-menu","a-menu","n-menu","i-menu","s-menu"];
 function addEventListener(id) {
