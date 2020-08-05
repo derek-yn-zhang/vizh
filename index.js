@@ -44,6 +44,11 @@ function finalpage() {
                     .duration(1000)
                     .style("opacity", 1);
             });
+    d3.select(".annotations p").remove();
+    d3.select(".annotations")
+        .append("p")
+        .append("text")
+        .text("In this final scene, we can observe the high intra-group correlations and the significant inter-group differences across most of these personality dimensions. This overview is meant to visually convey the surprising level of consistency in the personality profiles of both groups.");
 }
 
 function whichData(buttonElement) {
@@ -52,22 +57,19 @@ function whichData(buttonElement) {
 
     function getAnnotations(buttonClickedId) {
         if ( buttonClickedId === 'btn1' ) {
-            return "This is button 1 here!";
+            return "People who use cannabis-derived products tend to possess high levels of openness, impulsiveness, and sensation-seeking in addition to low levels of conscientiousness. Non-user tendencies are of roughly equal magnitude and opposite direction in these dimensions. This is the standard case, as you'll see.";
         }
         else if ( buttonClickedId === 'btn2' ) {
-            return "This is button 2 here!";
+            return "People who use hallucinogens tend towards high openness, impulsiveness, and sensation-seeking, and low conscientiousness. Non-user tendencies are roughly equal and opposite, except for that non-users are seemingly bound by a disproportionate level of control over their thought processes.";
         }
         else if ( buttonClickedId === 'btn3' ) {
-            return "This is button 3 here!";
+            return "People who use inhalants tend towards moderate openness and impulsiveness, high sensation-seeking, and low conscientiousness. Non-user tendencies are roughly equal and opposite. Sensation seeking may be stressed as a result of subjects seeking out a novel experience or high from an unconventional source.";
         }
         else if ( buttonClickedId === 'btn4' ) {
             return "This is button 4 here!";
         }
         else if ( buttonClickedId === 'btn5' ) {
             return "This is button 5 here!";
-        }
-        else if ( buttonClickedId === 'btn6' ) {
-            return "This is button 7 here!";
         }
     }
 
