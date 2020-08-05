@@ -3,6 +3,7 @@
 <html></html>
 
 	<head>
+		<meta charset="UTF-8" />
 		<title>OCEANIS</title>
 		<link rel="stylesheet" href="index.css" />
 		<link rel="shortcut icon" href="docomo_smile.ico" />
@@ -52,7 +53,9 @@
 					<div class="binits"></div>
 				</button>
 			</div>
-			<div id="bordercomplete"></div>
+			<div id="drugclasses">
+				<p> Click to split along drug class usage&nbsp;&nbsp;<span>↰</span></p>
+			</div>
 		</div>
 
 		<div class="slimpanel">
@@ -114,7 +117,9 @@
 		<div class="rightpanel">
 			<div class="annotationbox"><div class="annotations"><p>People behave differently in different situations, so
 				personality will only predict behaviour when the behaviours are aggregated or averaged across different situations. 
-				Here, we are aggregating across subjects to discover structural consistencies in personality along the divides of various drug usages.</p></div></div>
+				<span id="descr">Here, we are aggregating across subjects to discover structural consistencies in personality across the divides of various drug usages.</span></p></div>
+			</div>
+
 			<div class="content">
 				<div class="collapsible-menu">
 					<input type="checkbox" class="menu" id="o-menu" onclick="console.log(this.id.toString())">
@@ -165,6 +170,10 @@
 						<p>: the seeking of varied, novel, complex and intense sensations and experiences, and the willingness to take risks for the sake of such experience.</p>
 					</div>
 				</div>
+			</div>
+
+			<div id="traits">
+				<p><span>↲</span>&nbsp;&nbsp;Select for personality trait information</p>
 			</div>
 		</div>
 

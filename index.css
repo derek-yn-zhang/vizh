@@ -138,6 +138,46 @@ body {
                 border-bottom: 1px solid rgb(110, 110, 110);
             }
 
+#drugclasses {
+    position: fixed;
+    border: none;
+    font-size: 10px;
+    bottom: 21.5%;
+    left: 0%;
+    text-align: center;
+
+    /* height: 5%; */
+    width: 16%;
+    border: 1px solid red;
+    border-left-color: white;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+    #drugclasses span {
+        writing-mode:vertical-rl;
+        font-size: 15px;
+    }
+
+#traits {
+    position: fixed;
+    border: none;
+    font-size: 10px;
+    bottom: 21.5%;
+    right: 0%;
+    text-align: center;
+
+    /* height: 5%; */
+    width: 24.3%;
+    border: 1px solid red;
+    border-right-color: white;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+    #traits span {
+        writing-mode:vertical-rl;
+        font-size: 15px;
+    }
+
 #source {
     position: fixed;
     border: none;
@@ -314,6 +354,9 @@ body {
         overflow-wrap: break-word;
         hyphens: auto;
     }
+        #descr {
+            font-weight: bold;
+        }
 
 
 .content {
@@ -341,7 +384,7 @@ body {
 
     margin-top: -1px;
     padding-top: 4.3%;
-    padding-bottom: 3.2%;
+    padding-bottom: 3.3%;
     padding-left: 6%;
     font-weight: normal;
     font-size: 15px;

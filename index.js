@@ -48,11 +48,13 @@ function finalpage() {
     d3.select(".annotations")
         .append("p")
         .append("text")
-        .text("In this final scene, we can observe the high intra-group correlations and the significant inter-group differences across most of these personality dimensions. This overview is meant to visually convey the surprising level of consistency in the personality profiles of both groups.");
+        .text("In this final scene, we can observe the high intra-group correlations and the significant inter-group differences across most of these personality dimensions. This overview is meant to visually convey the surprising level of consistency in the personality profiles of both groups. Hopefully, it succeed in doing so.");
 }
 
 function whichData(buttonElement) {
 
+    d3.select("#drugclasses").transition().delay(300).duration(800).style("opacity", 0);
+    d3.select("#traits").transition().delay(300).duration(800).style("opacity", 0);
     d3.select(".hoverinstruct").transition().delay(300).duration(800).style("opacity", 0);
 
     function getAnnotations(buttonClickedId) {
@@ -60,16 +62,16 @@ function whichData(buttonElement) {
             return "People who use cannabis-derived products tend to possess high levels of openness, impulsiveness, and sensation-seeking in addition to low levels of conscientiousness. Non-user tendencies are of roughly equal magnitude and opposite direction in these dimensions. This is the standard case, as you'll see.";
         }
         else if ( buttonClickedId === 'btn2' ) {
-            return "People who use hallucinogens tend towards high openness, impulsiveness, and sensation-seeking, and low conscientiousness. Non-user tendencies are roughly equal and opposite, except for that non-users are seemingly bound by a disproportionate level of control over their thought processes.";
+            return "People who use hallucinogens tend towards high openness, impulsiveness, and sensation-seeking, and low conscientiousness. Non-user tendencies are roughly equal and opposite, except for that it is sufficient for non-users to be less impulsive and sensation-seeking to a lesser degree of significance.";
         }
         else if ( buttonClickedId === 'btn3' ) {
-            return "People who use inhalants tend towards moderate openness and impulsiveness, high sensation-seeking, and low conscientiousness. Non-user tendencies are roughly equal and opposite. Sensation seeking may be stressed as a result of subjects seeking out a novel experience or high from an unconventional source.";
+            return "People who use inhalants tend towards moderate openness and impulsiveness, high sensation-seeking, and low conscientiousness. Non-user tendencies are roughly equal and opposite. Sensation seeking may be stressed as a result of subjects seeking out a novel experience, or 'high', from an unconventional source.";
         }
         else if ( buttonClickedId === 'btn4' ) {
-            return "This is button 4 here!";
+            return "As with before, users tend towards high openness, impulsiveness, and sensation-seeking, and low conscientiousness, where the non-user profile exhibits a similar relationship. Interestingly, the two groups split harshly along traits agreeableness and neuroticism, where users are rather disgreeableness and neurotic.";
         }
         else if ( buttonClickedId === 'btn5' ) {
-            return "This is button 5 here!";
+            return "You have probably caught onto this pattern at this point. For example, if you step back and animate the cannabis grouping again, you'll find that these two profile are nearly the same.";
         }
     }
 
