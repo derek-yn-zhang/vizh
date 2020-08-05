@@ -81,14 +81,6 @@ function whichData(buttonElement) {
         }
     }
 
-    // function checkEmpty() {
-    // 	if (d3.select(".chart").selectAll("rect").empty()) {
-    // 		return true;
-    // 	} else {
-    // 		return false
-    // 	}
-    // }
-
     console.log(lastClicked != null)
     console.log(lastClicked)
 
