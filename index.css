@@ -250,7 +250,7 @@ body {
 .rightpanel {
     margin-left: 75%;
     height: 100%;
-    width: 30%;
+    width: 24.3%;
     background-color: white;
 
     display: flex;
@@ -279,7 +279,7 @@ body {
 .content {
     position: relative;
     width: 100%;
-    top: 18.4%;
+    top: 18.2%;
     /* padding-top: 53%; */
     /* border-left: 1px solid rgb(110, 110, 110); */
 
@@ -291,6 +291,7 @@ body {
 
 .collapsible-menu {
     width: 100%;
+    align-content: center;
 }
 
 .collapsible-menu label {
