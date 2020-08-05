@@ -18,14 +18,15 @@ for (i = 0; i < menuarr.length; i++) {
 function finalpage() {
     d3.selectAll('svg > rect').remove();
     d3.select(".hoverinstruct").transition().delay(300).duration(800).style("opacity", 1);
-    d3.select(".chart").selectAll("text").transition().duration(800).style("opacity", 0.7);
+    // d3.select(".chart").selectAll("text").transition().duration(800).style("opacity", 0.7);
     d3.select(".chart").selectAll("line").transition().duration(800).style("opacity", 0.7);
     d3.selectAll('ellipse')
         .on('mouseover', function(d, i) {
                 d3.select("#s" + this.id.substr(1))
                 .transition()
-                    .duration(800)
-                    .style("opacity", 0);
+                    .delay(100)
+                    .duration(1000)
+                    .style("opacity", 1);
                 d3.select("#" + this.id.substr(1))
                 .transition()
                     .duration(800)
@@ -34,9 +35,9 @@ function finalpage() {
             .on('mouseout', function(d, i) {
                 d3.select("#s" + this.id.substr(1))
                 .transition()
-                    .delay(600)
-                    .duration(1500)
-                    .style("opacity", 1);
+                    .delay(1800)
+                    .duration(1000)
+                    .style("opacity", 0);
                 d3.select("#" + this.id.substr(1))
                 .transition()
                     .delay(800)
@@ -91,54 +92,16 @@ function whichData(buttonElement) {
     console.log(lastClicked != null)
     console.log(lastClicked)
 
-    // if (lastClicked != null) {
-    // 	var cachedata = getData(lastClicked);
-
-    // 	d3.select(".chart")
-    // 	.selectAll("rect").data(data).enter().insert("rect")
-    // 	.attr("width", 74)
-    // 	.attr("x", function(d,i) {
-    // 		if(d[1] == 1) {
-    // 			return 76*i;
-    // 		} else {
-    // 			return 76*i - 532;
-    // 		}
-    // 	})
-    // 	.attr("y", function(d) { 
-    // 			if(d[0] < 0) { return 900 }
-    // 		})
-    // 	.attr("transform", "translate(100,0)")
-    // 	.style("fill-opacity", 1)
-    // 		.style("fill", function(d) { 
-    // 			if(d[1] == 1) {
-    // 				return "red";
-    // 			} else {
-    // 				return "black";
-    // 			}
-    // 	});
-
-    // 	initselection = d3.select(".chart").selectAll("rect").data(cachedata);
-    // 	initselection.each(function (d) {
-    // 		if (d[0] >= 0) {
-    // 			d3.select(this)
-    // 			.attr("height", function(d) { return 350*d[0]; })
-    // 			.attr("y", function(d) { return 900 - 350*d[0]; })
-    // 			.transition()
-    // 				.delay(50)
-    // 				.duration(1000)
-    // 				.attr("height", 0)
-    // 				.attr("y", 900)
-    // 		}
-    // 		else if (d[0] < 0) {
-    // 			d3.select(this)
-    // 			.attr("height", function(d) { return -350*d[0]; })
-    // 			.transition()
-    // 				.delay(50)
-    // 				.duration(1000)
-    // 				.attr("height", 0)
-    // 		}
-    // 	})
-    // }
+    if (lastClicked != null) {
+        console.log("in clearance step");
+        d3.select(".chart")
+            .selectAll("rect")
+            .transition()
+                .delay(50)
+                .duration(1000)
+                .attr("height", 0)
+                .attr("y", 0);
+    }
 
 
     d3.selectAll("svg > rect").remove();
@@ -146,12 +109,12 @@ function whichData(buttonElement) {
 
     var buttonClickedId = buttonElement.id;
     d3.select("#" + buttonClickedId).select(".binits").style("color", "red");
-    // lastClicked = buttonClickedId;
+    lastClicked = buttonClickedId;
 
     var data = getData(buttonClickedId);
     var barwidth = 12.2;
-    var barspace = 15;
-    var groupadjust = 105;
+    var barspace = 14.96;
+    var groupadjust = 104.72;
 
     d3.select(".chart")
         .selectAll(null).data(data).enter()
@@ -175,13 +138,8 @@ function whichData(buttonElement) {
                 })
             .attr("transform", "translate(9.5,0)")
             .style("fill-opacity", 1)
-                .style("fill", function(d) { 
-                    if(d[1] == 1) {
-                        return "red";
-                    } else {
-                        return "black";
-                    }
-                })
+            .style("fill", function(d) { return "rgb("+ Math.abs(Math.round(d[0] * 800)) 
+            + ",204," + Math.abs(Math.round(d[0] * 900)) + ")"; })
             .on('mouseover', function(d, i) {
                 d3.select("#s" + this.id.substr(1)).style("opacity", 1);
                 console.log("id", this.id);
@@ -248,7 +206,7 @@ function whichData(buttonElement) {
                 .duration(1000)
                 .attr("y1", function(d,i) { return -100*d[0] })
                 .attr("y2", function(d,i) { return -100*d[0] })
-                .style("opacity", 0.5)
+                .style("opacity", 0.9)
                 .style("stroke", function(d) { 
                         if(d[1] == 1) {
                             return "red";
@@ -257,8 +215,6 @@ function whichData(buttonElement) {
                         }
                     });
 
-    // var shifts = [7.8, -3.2];
-    // var xshift = shifts[Math.floor(Math.random() * shifts.length)];
     var xshift = -3.2;
     var group = 
         d3.select(".chart")
@@ -303,6 +259,7 @@ function whichData(buttonElement) {
                 console.log("mouseout", d);
             });
 
+    // var shifts = [0, 15];
     group.append("text")
         .attr("id", function(d,i) {
             var initid = "sid" + d[0].toString() + d[1].toString() + d[2];
@@ -310,12 +267,21 @@ function whichData(buttonElement) {
         })
         .text(function(d) { return d[2]; })
         .attr("x", function(d,i) {
-        if(d[1] == 1) {
-            return barspace*i + barwidth - 0.9;
-        } 
-        else {
-            return barspace*i - groupadjust + barwidth - 0.9;
-        }
+            // shiftBool = shifts[Math.floor(Math.random() * shifts.length)];
+            if(d[1] == 1) {
+                var toReturn = barspace*i + barwidth - 0.9;
+                if(d[2] == "IN" || d[2] == "IL" || d[2] == "O") {
+                    toReturn = toReturn + 14.8;
+                }
+                return toReturn;
+            } 
+            else {
+                var toReturn = barspace*i - groupadjust + barwidth - 0.9;
+                if(d[2] == "IN" || d[2] == "IL" || d[2] == "O") {
+                    toReturn = toReturn + 14.8;
+                }
+                return toReturn;
+            }
         })
         .attr("y", function(d,i) { return -100*d[0] + 0.65 })
         .attr("text-anchor", "middle")
