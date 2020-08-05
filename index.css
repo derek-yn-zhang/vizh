@@ -260,10 +260,10 @@ body {
 
 .annotationbox {
     position: relative;
-    height: 13%;
+    height: 11%;
     width: 100%;
     border: 1px solid red;
-    top: 20%;
+    top: 25%;
 
     /* padding-left: 6%;
     padding-right: 12%; */
@@ -278,7 +278,7 @@ body {
 
 .content {
     width: 100%;
-    padding-top: 44.5%;
+    padding-top: 42%;
     /* padding-top: 53%; */
     /* border-left: 1px solid rgb(110, 110, 110); */
 
