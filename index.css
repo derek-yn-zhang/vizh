@@ -259,11 +259,21 @@ body {
 }
 
 .annotationbox {
-    position: fixed;
-    margin-top: 5.5%;
-    height: 18%;
+    position: relative;
+    height: 13%;
     width: 100%;
-    /* border: 1px solid red; */
+    border: 1px solid red;
+    top: 20%;
+
+    /* padding-left: 6%;
+    padding-right: 12%; */
+    font-size: 15px;
+    font-weight: normal;
+    font-family: 'DM Sans', sans-serif;
+    color: black;
+    overflow: hidden;
+    overflow-wrap: break-word;
+    hyphens: auto;
 }
 
 .content {
