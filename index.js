@@ -329,4 +329,6 @@ function whichData(buttonElement) {
         .style("font-family", "'DM' Sans, sans-serif")
         .style("font-weight", "normal")
         .style("font-size", 2);
+
+    d3.select(".chart").insert("line").attr("x1","0").attr("x2","118").attr("y1","0").attr("y2","20").attr("stroke-width","5")
 }
