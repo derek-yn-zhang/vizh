@@ -48,7 +48,28 @@ function finalpage() {
 
 function whichData(buttonElement) {
 
-    function getData(buttonElement) {
+    function getAnnotations(buttonClickedId) {
+        if ( buttonClickedId === 'btn1' ) {
+            return "This is button 1 here!";
+        }
+        else if ( buttonClickedId === 'btn2' ) {
+            return "This is button 2 here!";
+        }
+        else if ( buttonClickedId === 'btn3' ) {
+            return "This is button 3 here!";
+        }
+        else if ( buttonClickedId === 'btn4' ) {
+            return "This is button 4 here!";
+        }
+        else if ( buttonClickedId === 'btn5' ) {
+            return "This is button 5 here!";
+        }
+        else if ( buttonClickedId === 'btn6' ) {
+            return "This is button 7 here!";
+        }
+    }
+
+    function getData(buttonClickedId) {
         if ( buttonClickedId === 'btn1' ) {
             return [ [0.3641,1,"C"],[-0.2630,1,"C"],[-0.0211,1,"C"],
             [-0.1214,1,"C"],[0.1023,1,"C"],[0.2708,1,"C"],[0.4005,1,"C"],
@@ -101,7 +122,14 @@ function whichData(buttonElement) {
 
     var buttonClickedId = buttonElement.id;
     d3.select("#" + buttonClickedId).select(".binits").style("color", "red");
-    lastClicked = buttonClickedId;
+    // lastClicked = buttonClickedId;
+
+    var annotationString = getAnnotations(buttonClickedId);
+    d3.select(".annotations p").remove();
+    d3.select(".annotations")
+        .append("p")
+        .append("text")
+        .text(annotationString);
 
     var data = getData(buttonClickedId);
     var barwidth = 11;
