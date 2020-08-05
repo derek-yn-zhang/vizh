@@ -1,4 +1,9 @@
-var lastClicked = null;
+// var lastClicked = null;
+
+window.onclick = function () {
+    d3.select("#drugclasses").style("opacity", 0);
+    d3.select("#traits").style("opacity", 0);
+}
 
 var menuarr = ["o-menu","c-menu","e-menu","a-menu","n-menu","i-menu","s-menu"];
 function addEventListener(id) {
@@ -53,8 +58,6 @@ function finalpage() {
 
 function whichData(buttonElement) {
 
-    d3.select("#drugclasses").transition().delay(300).duration(800).style("opacity", 0);
-    d3.select("#traits").transition().delay(300).duration(800).style("opacity", 0);
     d3.select(".hoverinstruct").transition().delay(300).duration(800).style("opacity", 0);
 
     function getAnnotations(buttonClickedId) {
