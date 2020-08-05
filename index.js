@@ -6,6 +6,7 @@ function addEventListener(id) {
         if (document.getElementById(this.id).checked) {
             d3.selectAll('.menu').property('checked', false);
             d3.select("#" + this.id).property('checked', true);
+            d3.select("#traits").style('opacity', 0);
         }
     });
 }
@@ -53,6 +54,7 @@ function finalpage() {
 
 function whichData(buttonElement) {
 
+    d3.select("#drugclasses").transition().delay(300).duration(800).style("opacity", 0);
     d3.select(".hoverinstruct").transition().delay(300).duration(800).style("opacity", 0);
 
     function getAnnotations(buttonClickedId) {
