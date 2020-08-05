@@ -148,11 +148,43 @@ body {
 } */
 
 
+/* SLIM PANEL */
+/* ********************************************** */
+
+.slimpanel {
+    /* padding-right: 15%; */
+    margin-left: 18%;
+    height: 100%;
+    width: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.legend {
+    height: 30%; 
+    width: 60%;
+    margin-bottom: 10%;
+    display: flex;
+    flex-direction: column;   
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: bold;
+    font-size: 25px;
+    color: red;
+}
+    #zero {
+        font-size: 15px;
+        color: black;
+    }
+
 /* CENTER PANEL */
 /* ********************************************** */
 
 .centerpanel {
-    margin-left: 20%;
+    margin-left: 22%;
     /* padding-left: 5%; */
     height: 100%; 
     width: 50%;
@@ -212,38 +244,6 @@ body {
 }
 
 
-/* SLIM PANEL */
-/* ********************************************** */
-
-.slimpanel {
-    padding-right: 20%;
-    margin-left: 70%;
-    height: 100%;
-    width: 5%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: flex-start;
-}
-
-.legend {
-    height: 30%; 
-    width: 60%;
-    margin-bottom: 10%;
-    display: flex;
-    flex-direction: column;   
-    justify-content: space-between;
-    align-items: center;
-    font-family: 'DM Sans', sans-serif;
-    font-weight: bold;
-    font-size: 25px;
-    color: red;
-}
-    #zero {
-        font-size: 15px;
-        color: black;
-    }
-
 /* RIGHT PANEL */
 /* ********************************************** */
 
@@ -279,7 +279,7 @@ body {
 .content {
     position: relative;
     width: 100%;
-    top: 20%;
+    top: 18.7%;
     /* padding-top: 53%; */
     /* border-left: 1px solid rgb(110, 110, 110); */
 
