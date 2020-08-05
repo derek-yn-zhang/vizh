@@ -290,15 +290,15 @@ body {
 
 .annotationbox {
     position: relative;
-    height: 11%;
+    height: 15%;
     width: 100%;
     border: 1px solid red;
     border-right-color: white;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
-    top: 16%;
+    top: 12%;
 
-    font-size: 15px;
+    font-size: 12px;
         font-weight: normal;
         font-family: 'DM Sans', sans-serif;
         color: black;
@@ -306,8 +306,9 @@ body {
     .annotations {
         align-content: center;
         padding-left: 6%;
-        padding-right: 12%;
-        padding-top: 4%;
+        padding-right: 10%;
+        padding-top: 0.5%;
+        padding-bottom: 1.5%;
         
         overflow: hidden;
         overflow-wrap: break-word;
@@ -318,7 +319,7 @@ body {
 .content {
     position: relative;
     width: 100%;
-    top: 18.4%;
+    top: 14.4%;
     /* padding-top: 53%; */
     /* border-left: 1px solid rgb(110, 110, 110); */
 
