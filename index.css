@@ -88,7 +88,7 @@ body {
     align-items: flex-end;
     justify-content: flex-start;
     flex-direction: column;
-    border-right: 1px solid rgb(110, 110, 110);;
+    /* border-right: 1px solid rgb(110, 110, 110); */
 }
     .buttonbox button {
         margin-top: -2px;
@@ -269,7 +269,7 @@ body {
 .content {
     width: 100%;
     /* padding-top: 63%; */
-    padding-top: 48%;
+    padding-top: 43%;
     /* border-left: 1px solid rgb(110, 110, 110); */
 
     display: flex;
