@@ -1,4 +1,4 @@
-// var lastClicked = null;
+var lastClicked = null;
 
 var menuarr = ["o-menu","c-menu","e-menu","a-menu","n-menu","i-menu","s-menu"];
 function addEventListener(id) {
@@ -20,6 +20,7 @@ for (i = 0; i < menuarr.length; i++) {
 function finalpage() {
     d3.selectAll('svg > rect').remove();
     d3.select(".hoverinstruct").transition().delay(300).duration(800).style("opacity", 1);
+    // d3.select(".chart").selectAll("text").transition().duration(800).style("opacity", 0.7);
     d3.select(".chart").selectAll("line").transition().duration(800).style("opacity", 0.7);
     d3.selectAll('ellipse')
         .on('mouseover', function(d, i) {
@@ -108,9 +109,6 @@ function whichData(buttonElement) {
         }
     }
 
-    console.log(lastClicked != null)
-    console.log(lastClicked)
-
     if (lastClicked != null) {
         console.log("in clearance step");
         d3.select(".chart")
@@ -121,6 +119,7 @@ function whichData(buttonElement) {
                 .attr("height", 0)
                 .attr("y", 0);
     }
+
 
     d3.selectAll("svg > rect").remove();
     d3.selectAll(".binits").style("color", "black");
@@ -328,4 +327,6 @@ function whichData(buttonElement) {
         .style("font-family", "'DM' Sans, sans-serif")
         .style("font-weight", "normal")
         .style("font-size", 2);
+
+    d3.select(".chart").insert("line").attr("x1","0").attr("x2","118").attr("y1","0").attr("y2","20").attr("stroke-width","5")
 }
