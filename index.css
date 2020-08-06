@@ -131,11 +131,17 @@ body {
 .hoverinstruct {
     position: fixed;
     border: none;
-    font-size: 10px;
+    font-size: 0.7vw;
     top: 12%;
     left: 45%;
     text-align: center;
     opacity: 0;
+}
+
+.hoverimg {
+    max-width: 100%;
+    height: auto;
+    width: auto\9;
 }
 
 
