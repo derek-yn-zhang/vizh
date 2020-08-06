@@ -50,7 +50,7 @@ function finalpage() {
     d3.select(".annotations")
         .append("p")
         .append("text")
-        .text("In this final scene, we can observe the high intra-group correlations and the significant inter-group differences across most of these personality dimensions. This overview is meant to visually convey the surprising level of consistency in the personality profiles of both groups. Hopefully, you were able to see this for yourself.");
+        .text("In this final scene, we can observe the high intra-group correlations and the significant inter-group differences across most of these personality dimensions. This overview is meant to visually convey the surprising level of consistency in the personality profiles of both groups. Hopefully, you were able to recognize these personality endophenotypes for yourself. Currently, the field is attempting to map psychometric measures to biological, cognitive, and behavioral frameworks to further unravel their implications, applications, and limitations.");
 }
 
 function whichData(buttonElement) {
@@ -72,7 +72,7 @@ function whichData(buttonElement) {
             return "As with before, users tend towards high openness, impulsiveness, and sensation-seeking, and low conscientiousness, where the non-user profile exhibits a similar relationship. Interestingly, the two groups split harshly along traits agreeableness and neuroticism, where users are rather disgreeableness and neurotic.";
         }
         else if ( buttonClickedId === 'btn5' ) {
-            return "You have probably caught onto this pattern at this point. For example, if you step back and animate the cannabis grouping again, you'll find that these two profile are nearly the same.";
+            return "You have probably caught onto the pattern at this point. For example, if you step back and animate the cannabis grouping again, you'll find that these two profile are nearly the same. Research has found that impulsiveness and sensation-seeking are particularly important in the psychopathologies of anti-social behavior and addictions.";
         }
     }
 

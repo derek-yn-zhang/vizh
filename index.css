@@ -215,7 +215,7 @@ body {
 }
     #source a {
         text-decoration: none;
-        color: #6d38ff;
+        color: red;
     }
 
 
@@ -350,4 +350,7 @@ input.menu {
     #traits span {
         writing-mode:vertical-rl;
         font-size: 1vw;
+    }
+    .traitlinks {
+        color: red;
     }
