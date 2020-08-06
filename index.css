@@ -13,10 +13,6 @@ body {
     font-family: 'DM Sans', sans-serif;
 }
 
-
-.centerpanel { position: fixed; }
-
-
 /* LEFT PANEL */
 /* ********************************************** */
 
@@ -57,7 +53,6 @@ body {
                 background-color: black;
             }
         .legendlab {
-            /* position: fixed; */
             margin-right: 28.3%;
             height: 100%;
             text-align: right;
@@ -115,8 +110,6 @@ body {
     top: 75%;
     left: 0%;
     text-align: center;
-
-    /* height: 5%; */
     width: 16.5%;
     border: 1px solid red;
     border-left: 1px solid white;
@@ -144,13 +137,12 @@ body {
     width: auto\9;
 }
 
-
 /* CENTER PANEL */
 /* ********************************************** */
 
 .centerpanel {
+    position: fixed;
     margin-left: 22vw;
-    /* padding-left: 5%; */
     height: 100%; 
     width: 50%;
     display: flex;
@@ -166,7 +158,6 @@ body {
         display: flex;
         flex-direction: row;
         justify-content: center;
-        /* border-bottom: 2px solid red; */
     }
     .xlabs {
         height: 100%;
@@ -218,7 +209,6 @@ body {
         color: red;
     }
 
-
 /* RIGHT PANEL */
 /* ********************************************** */
 
@@ -242,12 +232,10 @@ body {
         align-content: center;
         display: block;
         margin-right: 5%;
-
         padding-left: 20px;
         padding-right: 20px;
         padding-top: 6px;
         padding-bottom: 6px;
-        
         overflow: hidden;
         overflow-wrap: break-word;
         hyphens: auto;
@@ -267,7 +255,6 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    /* align-items: flex-start; */
     border-top: 1px solid rgb(110, 110, 110);
 }
 
@@ -318,19 +305,16 @@ input:checked ~ .menu-content {
     -moz-transition: max-height 0.5s ease-in;
     -webkit-transition: max-height 0.5s ease-in;
 }
-
-input:checked ~ label {
-    color: red;
-}
-
-input.menu {
-    display: none;
-}
-
-.big {
-    font-weight: bold;
-    padding-right: 11%;
-}
+    input:checked ~ label {
+        color: red;
+    }
+    input.menu {
+        display: none;
+    }
+    .big {
+        font-weight: bold;
+        padding-right: 11%;
+    }
 
 #traits {
     position: fixed;
@@ -339,8 +323,6 @@ input.menu {
     top: 75%;
     right: 0%;
     text-align: center;
-
-    /* height: 5%; */
     width: 24.1%;
     border: 1px solid red;
     border-right-color: white;
