@@ -109,6 +109,9 @@ function whichData(buttonElement) {
         }
     }
 
+    console.log(lastClicked != null)
+    console.log(lastClicked)
+
     if (lastClicked != null) {
         console.log("in clearance step");
         d3.select(".chart")
