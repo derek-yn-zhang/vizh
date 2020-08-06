@@ -109,8 +109,7 @@ function whichData(buttonElement) {
         }
     }
 
-    if (lastClicked != null) {
-        console.log("in clearance step");
+    // if (lastClicked != null) {
         d3.select(".chart")
             .selectAll("rect")
             .transition()
@@ -118,7 +117,7 @@ function whichData(buttonElement) {
                 .duration(1000)
                 .attr("height", 0)
                 .attr("y", 0);
-    }
+    // }
 
 
     d3.selectAll("svg > rect").remove();
