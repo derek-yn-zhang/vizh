@@ -50,7 +50,7 @@ function finalpage() {
     d3.select(".annotations")
         .append("p")
         .append("text")
-        .text("In this final scene, we can observe the high intra-group correlations and the significant inter-group differences across most of these personality dimensions. This overview is meant to visually convey the surprising level of consistency in the personality profiles of both groups. Hopefully, you were able to recognize these personality endophenotypes for yourself. Currently, the field is attempting to map psychometric measures to biological, cognitive, and behavioral frameworks to further unravel their implications, applications, and limitations.");
+        .text("This overview is meant to visually convey the surprising level of consistency in the personality profiles of both groups. Hopefully, you were able to recognize these personality endophenotypes for yourself. Currently, the field is attempting to map psychometric measures to biological, cognitive, and behavioral frameworks to further unravel their implications, applications, and limitations.");
 }
 
 function whichData(buttonElement) {
