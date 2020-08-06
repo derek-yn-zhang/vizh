@@ -223,7 +223,7 @@ body {
     border-right-color: white;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
-    bottom: 75%;
+    bottom: 74.7%;
     right: 0%;
 
     font-size: 0.85vw;
@@ -254,7 +254,7 @@ body {
     position: absolute;
     width: 23.5%;
     top: 29.5%;
-    right: 20px;
+    right: 16px;
 
     overflow: auto;
     display: flex;
