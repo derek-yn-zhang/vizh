@@ -87,6 +87,7 @@ body {
     }
         .buttonbox button:hover, button:focus {
             background-color: #f2f2f2;
+            color: red;
         }
         #btn6, #btn7 {
             font-weight: bold;
@@ -278,7 +279,7 @@ body {
     cursor: pointer;
 }
 
-.collapsible-menu label:hover {
+.collapsible-menu label:hover, label:focus {
     background-color: #f2f2f2;
     border-top: 1px solid rgb(110, 110, 110);
 }
@@ -304,6 +305,7 @@ input:checked ~ .menu-content {
     -webkit-transition: max-height 0.5s ease-in;
 }
     input:checked ~ label {
+        background-color: #f2f2f2;
         color: red;
     }
     input.menu {
