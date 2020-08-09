@@ -69,7 +69,7 @@ function whichData(buttonElement) {
             return "People who use inhalants tend towards moderate openness and impulsiveness, high sensation-seeking, and low conscientiousness. Non-user tendencies are roughly equal and opposite. Sensation seeking may be stressed as a result of subjects seeking out a novel experience, or 'high', from an unconventional source.";
         }
         else if ( buttonClickedId === 'btn4' ) {
-            return "As with before, users tend towards high openness, impulsiveness, and sensation-seeking, and low conscientiousness, where the non-user profile exhibits a similar relationship. Interestingly, the two groups split harshly along traits agreeableness and neuroticism, where users are rather disgreeableness and neurotic.";
+            return "As with before, users tend towards high openness, impulsiveness, and sensation-seeking, and low conscientiousness, where the non-user profile exhibits a similar relationship. Interestingly, the two groups split harshly along traits agreeableness and neuroticism, where users are rather disgreeable and neurotic.";
         }
         else if ( buttonClickedId === 'btn5' ) {
             return "You have probably caught onto the pattern at this point. For example, if you step back and animate the cannabis grouping again, you'll find that these two profile are nearly the same. Research has found that impulsiveness and sensation-seeking are particularly important in the psychopathologies of anti-social behavior and addictions.";
