@@ -87,7 +87,6 @@ body {
     }
         .buttonbox button:hover, button:focus {
             background-color: #f2f2f2;
-            color: red;
         }
         #btn6, #btn7 {
             font-weight: bold;
